@@ -5,11 +5,11 @@ TextField,InputAdornment,Box,MenuItem,FormControl,FormLabel,
 FormControlLabel,RadioGroup,Radio,FormHelperText,Checkbox, FormGroup,Switch,Rating,Autocomplete,
  Divider,Grid,Card,CardContent,CardMedia,CardActions,Accordion,AccordionSummary,AccordionDetails, Paper
 ,ImageList,ImageListItem,ImageListItemBar,Menu, Link,Breadcrumbs,Drawer
-,SpeedDial,SpeedDialAction,SpeedDialIcon} from '@mui/material'
+,SpeedDial,SpeedDialAction,SpeedDialIcon,BottomNavigation,BottomNavigationAction, Avatar,AvatarGroup,Badge} from '@mui/material'
 
 import SendIcon from '@mui/icons-material/Send';
 import { FunctionsSharp, Send, TroubleshootSharp } from '@mui/icons-material';
-import { Bookmark , BookmarkBorder,CopyAll,Print,Share} from '@mui/icons-material';
+import { Bookmark , BookmarkBorder,CopyAll,Print,Share,HomeMaxSharp,Favorite,Person,Mail} from '@mui/icons-material';
 import { convertLength } from '@mui/material/styles/cssUtils';
 
 export default function Home() {
@@ -21,6 +21,10 @@ export default function Home() {
   const [expanded,setExpanded] = useState(false)
   const [anchorEl,setAnchorEl] = useState(null)
   const [slide,setSlide] = useState(false)
+  const [page,setPage] = useState(null)
+  useEffect(()=>{
+    console.log(page)
+  },[page])
   const op = Boolean(anchorEl)
  function HandleE(e){
     setAnchorEl(e.currentTarget)
@@ -242,7 +246,33 @@ function handc(){
       <SpeedDialAction icon={<Print/>} tooltipTitle='Print' tooltipOpen={true}/>
       <SpeedDialAction icon={<Share/>} tooltipTitle='Share' tooltipOpen/>
     </SpeedDial>
+    <BottomNavigation
+     sx={{width:'100%',bottom:'0'}}
+     value={page}
+     onChange={(event,newValue)=>{
+     
+       setPage(newValue)
+     }}
+     >
+       <BottomNavigationAction label='Home' icon={<HomeMaxSharp/>}/>
+       <BottomNavigationAction label='Favorite' icon={<Favorite/>}/>
+       <BottomNavigationAction label='Menu' icon={<Person/>}/>
+    </BottomNavigation>
+    <Stack direction='row' spacing={2}>
+      <AvatarGroup max={3}>
+        <Avatar variant='square'>BW</Avatar>
+        <Avatar>TS</Avatar>
+        <Avatar>AS</Avatar>
+        <Avatar>EL</Avatar>
+      </AvatarGroup>
+    </Stack>
+    
+       <Badge variant='dot' invisible={true} badgeContent={1} color='primary' sx={{marginLeft:10,marginTop:3}} >
+          <Mail/>
+       </Badge>
+    
     </Paper>
+    
     
   )
 } 

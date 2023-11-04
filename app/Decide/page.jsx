@@ -1,7 +1,7 @@
 'use client'
 import React,{useState} from 'react'
 import Link from 'next/link'
-export default function page() {
+export default function Decide() {
   const [order,setOrder] = useState()
 
   return (
