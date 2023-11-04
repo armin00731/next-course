@@ -1,0 +1,36 @@
+{
+  "name": "main-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "preview-email":"email dev -p 3001"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.13",
+    "@mui/material": "^5.14.13",
+    "@react-email/components": "^0.0.7",
+    "@types/node": "20.8.2",
+    "@types/react": "18.2.24",
+    "@types/react-dom": "18.2.8",
+    "autoprefixer": "10.4.16",
+    "eslint": "8.50.0",
+    "eslint-config-next": "13.5.4",
+    "fast-sort": "^3.4.0",
+    "mysql": "^2.18.1",
+    "next": "13.5.4",
+    "next-cloudinary": "^4.25.0",
+    "postcss": "8.4.31",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-email": "^1.9.5",
+    "react-router-dom": "^6.16.0",
+    "tailwindcss": "3.3.3",
+    "typescript": "5.2.2"
+  }
+}
